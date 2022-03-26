@@ -105,7 +105,7 @@ export default function UpdateBlog() {
           >
             SEND
           </Button>
-          <Button variant="outlined" color="error" onClick={() => navigate(-1)}>
+          <Button variant="outlined" color="error" sx={{ mr: 2 }} onClick={() => navigate(-1)}>
             Back
           </Button>
         </Box>

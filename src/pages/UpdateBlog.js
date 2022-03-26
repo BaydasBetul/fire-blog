@@ -33,12 +33,7 @@ export default function UpdateBlog() {
    
     const displayName = currentUser.displayName;
 
-    updateDoc(docRef, {
-      title,
-      url,
-      content,
-      displayName,
-      }).then(() => {
+    updateDoc(docRef, { title, url, content, displayName }).then(() => {
       formElement.current.reset();
       successNote("Updated Succesfully");
       navigate("/");

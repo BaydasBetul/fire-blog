@@ -10,14 +10,12 @@ import Newblog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
 import Details from "../pages/Details";
 import UpdateBlog from "../pages/UpdateBlog";
-//import SearchResult from "../pages/SeachResult";
-import SearchNav from "../components/SearchNav";
+
 
 const AppRouter = () => {
   return (
     <Router>
       <AppBar />
-      <SearchNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
@@ -28,7 +26,6 @@ const AppRouter = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/update/:id" element={<UpdateBlog />} />
-        {/* <Route path="/searchresult" element={<SearchResult />} /> */}
       </Routes>
       <Footer />
     </Router>

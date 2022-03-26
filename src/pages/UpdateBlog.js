@@ -28,13 +28,17 @@ export default function UpdateBlog() {
   const db = getFirestore();
   const docRef = doc(db, "datas", currentId);
 
-  const handleSubmit = (event) => {
+  const handleSubmitForm = (event) => {
     event.preventDefault();
-    //const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
+   
     const displayName = currentUser.displayName;
 
-    updateDoc(docRef, { title, url, content, displayName }).then(() => {
+    updateDoc(docRef, {
+      title,
+      url,
+      content,
+      displayName,
+      }).then(() => {
       formElement.current.reset();
       successNote("Updated Succesfully");
       navigate("/");
@@ -67,7 +71,7 @@ export default function UpdateBlog() {
           noValidate
           autoComplete="off"
           ref={formElement}
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmitForm}
         >
           <Avatar
             sx={{ m: 1, bgcolor: "secondary.main", width: 120, height: 70 }}

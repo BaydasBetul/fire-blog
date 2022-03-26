@@ -24,12 +24,12 @@ export default function UpdateBlog() {
   const [title, setTitle] = React.useState("");
   const [url, setUrl] = React.useState("");
   const [content, setContent] = React.useState("");
-  const formElement = React.useRef(""); // useRef  herhangi bir değişken değeri tutmak için kullanışlıdır
+  const formElement = React.useRef(); // useRef  herhangi bir değişken değeri tutmak için kullanışlıdır
   const db = getFirestore();
   const docRef = doc(db, "datas", currentId);
 
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
    
     const displayName = currentUser.displayName;
 
@@ -80,6 +80,7 @@ export default function UpdateBlog() {
             label="Title"
             multiline
             maxRows={4}
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <TextField
@@ -88,6 +89,7 @@ export default function UpdateBlog() {
             placeholder="Placeholder"
             multiline
             rows={2}
+            value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
           <TextField
@@ -95,6 +97,7 @@ export default function UpdateBlog() {
             label="Content"
             multiline
             rows={14}
+            value={content}
             onChange={(e) => setContent(e.target.value)}
           />
           <Button
